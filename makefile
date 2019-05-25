@@ -3,7 +3,7 @@ TARGET = bin/square.e
 PROG_OBJ = obj/main.o obj/func.o obj/calc.o
 
 C_FLAGS = -std=c99 -c -o
-ASM_FLAGS = -f win32 -DCYGWIN -o
+ASM_FLAGS = -f elf32 -o
 
 all: $(TARGET)
 
