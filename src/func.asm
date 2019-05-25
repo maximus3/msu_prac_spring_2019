@@ -16,7 +16,7 @@ global _f1
 global _f2
 global _f3
 
-_f1: ; double x
+f1: ; double x
     push ebp
     mov ebp, esp
     
@@ -34,7 +34,7 @@ _f1: ; double x
     leave
     ret
     
-_f2: ; double x
+f2: ; double x
     push ebp
     mov ebp, esp
     
@@ -48,7 +48,7 @@ _f2: ; double x
     leave
     ret
     
-_f3: ; double x
+f3: ; double x
     push ebp
     mov ebp, esp
     
