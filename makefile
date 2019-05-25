@@ -14,7 +14,7 @@ clean:
 	rm -f $(PROG_OBJ)
 
 $(TARGET): $(PROG_OBJ)
-	gcc -o $(TARGET) -m32 $(PROG_OBJ)
+	gcc -o $(TARGET) $(PROG_OBJ) -m32
 obj/main.o: src/main.c src/lib.h
 	gcc $(C_FLAGS) obj/main.o src/main.c
 obj/%.o: src/%.c
