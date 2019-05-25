@@ -265,7 +265,7 @@
     \item int search\_mid3(double x[])
     \\* Возвращает средний элемент массива из 3 чисел по возрастанию
     \item double search\_delta(double (*f)(double), double x1, double x2, double eps)
-    \\* Возвращает максимальное значение функции f, меньшее 0, или 0 на промежутке от x1 до x2.
+    \\* Возвращает минимальное значение функции f, меньшее 0, или 0 на промежутке от x1 до x2.
     \item double integral(double (*f)(double), double a, double b, double eps, double delta)
     \\* Возвращает определенный интеграл функции f на промежутке от a до b с поднятием функции на delta.
     \item double root(double (*f)(double), double (*g)(double), double a, double b, double eps)
@@ -274,7 +274,7 @@
 
 \subsection{Модуль функций}
 
-В модуле \textbf{func.asm} описаны 3 функции основного задания, на выход каждой из которых подается вещественное число, а на выход - значение функции в заданной точке.
+В модуле \textbf{func.asm} описаны 3 функции основного задания, на вход каждой из которых подается вещественное число, а на выход - значение функции в заданной точке.
 
 \subsection{Главный модуль}
 
@@ -300,12 +300,11 @@
 \newpage
 
 \section{Сборка программы (Make-файл)}
-
-Итоговый проект square.e собирается из 3 объектных модулей: 
-main.o func.o calc.o
-Они в свою очередь собираются из 3 файлов: 
-main.c calc.c func.asm
-Все фунцкии, использующиеся в программе, описаны в библиотеке: lib.h
+Итоговый проект square.e собирается из 3 объектных модулей: \\ 
+main.o func.o calc.o \\
+Они в свою очередь собираются из 3 файлов: \\
+main.c calc.c func.asm \\
+Все фунцкии, использующиеся в программе, описаны в библиотеке: lib.h \\
 Также используется библиотека: io.inc
 
 Все модули находятся в папке \textsc{SRC}.
@@ -331,13 +330,10 @@ PROG_OBJ = obj/main.o obj/func.o obj/calc.o
 C_FLAGS = -std=c99 -c -m32 -o
 ASM_FLAGS = -f elf32 -DUNIX -o
 all: $(TARGET)
-
 run: $(TARGET)
 	./$(TARGET)
-
 clean:
 	rm -f $(PROG_OBJ)
-
 $(TARGET): $(PROG_OBJ)
 	gcc -o $(TARGET) $(PROG_OBJ) -m32
 obj/main.o: src/main.c src/lib.h
