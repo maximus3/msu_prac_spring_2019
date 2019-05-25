@@ -12,9 +12,9 @@ section .data
     const_9q5 dq 9.5
 
 section .text
-global _f1
-global _f2
-global _f3
+global f1
+global f2
+global f3
 
 f1: ; double x
     push ebp
